@@ -7,15 +7,15 @@ void setup() {
   welcomescreen=loadImage("https://raw.githubusercontent.com/rawrxse/proj-2/main/img/start%20(2).png");
    game = 1; score = 0; highscore = 0; x = -200; vertical = 0; 
   size(600,800);
-  fill(0,0,0);
-  textSize(20);  
+  fill(184,39,60);
+  textSize(25);  
 }
 void draw() { 
   if(game == 0) {
     imageMode(CORNER);
     image(backpic, x, 0);
     image(backpic, x+backpic.width, 0);
-    x -= 5;
+    x -= 4;
     vertical += 1;
     y += vertical;
     if(x == -1800) x = 0;
@@ -29,7 +29,7 @@ void draw() {
       }
       if(wallx[i] == width/2) highscore = max(++score, highscore);
       if(y>height||y<0||(abs(width/2-wallx[i])<25 && abs(y-wally[i])>100)) game=1;
-      wallx[i] -= 6;
+      wallx[i] -= 5;
     }
     image(birdpic, width/2, y);
     text("Score: "+score, 10, 20);
